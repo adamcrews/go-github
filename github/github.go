@@ -206,6 +206,7 @@ type Client struct {
 
 	// Services used for talking to different parts of the GitHub API.
 	Actions            *ActionsService
+	Agents             *AgentsService
 	Activity           *ActivityService
 	Admin              *AdminService
 	Apps               *AppsService
@@ -659,6 +660,7 @@ func newClient(opts clientOptions) (*Client, error) {
 
 	c.common.client = c
 	c.Actions = (*ActionsService)(&c.common)
+	c.Agents = (*AgentsService)(&c.common)
 	c.Activity = (*ActivityService)(&c.common)
 	c.Admin = (*AdminService)(&c.common)
 	c.Apps = (*AppsService)(&c.common)
